@@ -1,1 +1,1239 @@
-Hello World
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>  
+        <script type="text/javascript" src="http://static.blog.csdn.net/scripts/tingyun-rum.js?v2"></script>
+            <link rel="canonical" href="http://blog.csdn.net/roguesir/article/details/72842958"/> 
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848"> 
+       
+    <title>【Paper Note】Convolutional Clustering for Unsupervised Learning 论文翻译（未完待续） - roguesir的博客
+        - CSDN博客</title><script>window._ty_rum&&window._ty_rum.server||function(t){function e(t){J&&(W.e[t]||(W.e[t]=[])).push(u())}function r(){var t=tt(it);return t||(t=nt(),et(it,t)),t}function n(){var t=a(ot);return t||(t=nt(),i(ot,t)),t}function a(t){if("string"!=typeof t)return null;var e=B.cookie;if(!e)return null;var r=null,n=e.split(";");return X.each(n,function(e){var n=e.split("=");if(X.trim(n[0])===X.trim(t))return r=n[1],!0}),r}function i(t,e,r){var n=t+"="+e;if(r){var a=new Date;a.setTime(a.getTime()+1e3*r),n+=";expires="+a.toGMTString()}B.cookie=n}function o(t){switch(typeof t){case"object":if(!t)return"null";if(t instanceof Array){for(var e="[",r=0;r<t.length;r++)e+=(r>0?",":"")+o(t[r]);return e+"]"}if(t instanceof Date)return t.getTime().toString();var e="{",r=0;for(var n in t)if("function"!=typeof t[n]){var a=o(t[n]);e+=(r>0?",":"")+o(n)+":"+a,r++}return e+"}";case"string":return'"'+t.replace(/([\"\\])/g,"\\$1").replace(/\n/g,"\\n")+'"';case"number":return t.toString();case"boolean":return t?"true":"false";case"function":return o(t.toString());case"undefined":default:return'"undefined"'}}function s(t){return z?z(t):t}function u(){return Date.now?Date.now():(new Date).valueOf()}function c(t,e,r){function n(){var t=X.args.apply(this,arguments);return e(i,t,r)}var a,i=t[t.length-1];if("function"==typeof i){switch(i.length){case 0:a=function(){return n.apply(this,arguments)};break;case 1:a=function(t){return n.apply(this,arguments)};break;case 2:a=function(t,e){return n.apply(this,arguments)};break;case 3:a=function(t,e,r){return n.apply(this,arguments)};break;case 4:a=function(t,e,r,a){return n.apply(this,arguments)};break;case 5:a=function(t,e,r,a,i){return n.apply(this,arguments)};break;default:for(var o=[],s=0,u=i.length;s<u;s++)o.push("_"+s);a=eval("(function(){return function("+o.join(",")+"){var args = [].slice.call(arguments, 0);return e(i, args, r);};})();")}t[t.length-1]=a}return t}function f(t,e){return t&&e&&(t.moduleName=e),t}function l(t,e,r){return function(){try{q=e,r&&d(e),t.apply(this,arguments),r&&p()}catch(n){throw r&&p(),f(n,e)}}}function d(e){X.each(["setTimeout","setInterval"],function(r){X.wrap(!0,t,r,function(t){return function(){var r,n=X.args.apply(this,arguments),a=n[0];return"function"==typeof a&&(r=l(a,e,!0)),r&&(n[0]=r),t.apply?t.apply(this,n):Function.prototype.apply.apply(t,[t,n])}})})}function p(){X.each(["setTimeout","setInterval"],function(e){X.unwrap(t,e)})}function h(t){H&&X.wrap(!1,H.prototype,"addEventListener",function(e){return function(){var r,n=X.args.apply(this,arguments),a=n[1];return"function"==typeof a&&(r=l(a,t,!0)),r&&(n[1]=r),e.apply(this,n)}}),d(t)}function v(){H&&X.unwrap(H.prototype,"addEventListener"),p()}function y(t){return function(t,e){}}function m(){return ft&&ft.indexOf("1")>-1}function g(){var t=0;if(G.firstPaint)t=G.firstPaint;else if(ct){var e=ct.timing;t=e.domLoading,ct.getEntriesByName&&X.each(B.querySelectorAll("head>link, head>script"),function(r){var n;if("LINK"==r.tagName?n=r.href:"SCRIPT"==r.tagName&&(r.defer||(n=r.src)),n){var a=ct.getEntriesByName(n);if(1==a.length){var i=a[0].responseEnd+e.navigationStart;i>t&&(t=i)}}}),t-=e.navigationStart,G.firstPaint=Math.round(t)}return t}function _(){if(G.fs)return G.fs;G.firstPaint||g();var e=G.firstPaint,r=t.innerHeight;if(ct&&ct.getEntriesByName){var n=[];X.each(B.querySelectorAll("img"),function(t){"none"!=t.style.display&&""!=t.src&&t.offsetTop<=r&&n.push(t.src)}),X.each(n,function(t){var r=ct.getEntriesByName(t);if(r.length){var n=r[0].responseEnd;n>e&&(e=n)}})}return G.fs=Math.round(e),e}function S(){var t=ct.timing&&ct.timing.navigationStart||G.st,e=G.end_time-t;return G.dr=e,e}function w(){if(this.errors.length){var t=function(t){var e=[],r={};X.each(t,function(t){var e=N(t[1],t[2],t[3],t[6]);r[e]?r[e][4]+=1:r[e]=[t[1],t[2],t[3],"#"==t[4]?B.URL:t[4],1,t[5],t[6],t[7]]});for(var n in r)e.push(r[n]);return e}(this.errors),e=this;X.POST(X.mkurl(G.server.beacon,"err",{fu:U?U:U++,os:parseInt((u()-(F||G.st))/1e3)}),X.stringify({datas:t}),{},function(t,r){t||(e.errors=[])})}}function T(){e("DOMContentLoaded"),lt.initend()}function b(){"complete"===B.readyState&&(e("readyStateComplete"),lt.initend())}function E(t){function e(){lt.send()}return!!G.load_time||(lt.initend(),G.load_time=u(),J&&(W.load=G.load_time),void(9===t?e():setTimeout(e,0)))}function k(){dt||E(9),X.bind(w,lt)(),dt=1}function x(){lt.touch||(lt.touch=u())}function P(t){if(t[6]){var e=t[4],r=t[5];if(r&&"string"==typeof r&&e){r=r.split(/\n/);var n=$.exec(r[0]);n||(n=$.exec(r[1])),n&&n[1]!=e&&(t[4]=n[1]||e,t[2]=n[2]||t[2],t[3]=n[3]||t[3])}}}function N(t,e,r,n){return String(t)+String(e)+String(r)+String(n)}function L(e){var r=arguments,n="unknown",a=[u()];if(0!=r.length){if("string"==typeof e){var i=r.length<4?r.length:4;a[1]=r[0],i>2&&(a[2]=r[2],a[3]=0,a[4]=r[1]),i>3&&r[3]&&(a[3]=r[3])}else if(e instanceof Event||t.ErrorEvent&&e instanceof ErrorEvent){if(a[1]=e.message||(e.error&&e.error.constructor.name)+(e.error&&e.error.message)||"",a[2]=e.lineno?e.lineno:0,a[3]=e.colno?e.colno:0,a[4]=e.filename||e.error&&e.error.fileName||e.target&&e.target.baseURI||"",!a[4]&&Q)return;a[4]==B.URL&&(a[4]="#"),e.error?(a[5]=e.error.stack,a[6]=e.error.moduleName):(a[5]=null,a[6]=null);var o=N(a[1],a[2],a[3],a[6]);if(a[7]=pt[o]?0:1,pt[o]=!0,a[1]===n&&a[4]===n)return;P(a)}lt.errors.push(a)}}function R(t){return function(){var e=arguments;if(!this._ty_wrap){var r=X.args.apply(this,e);this._ty_rum={method:r[0],url:r[1],start:u()}}try{return t.apply(this,e)}catch(n){return Function.prototype.apply.call(t,this,e)}}}function C(e){return"string"==typeof e?e.length:t.ArrayBuffer&&e instanceof ArrayBuffer?e.byteLength:t.Blob&&e instanceof Blob?e.size:e&&e.length?e.length:0}function I(e){return function(){function r(t){var e,r,n=c._ty_rum;if(n){if(4!==n.readyState&&(n.end=u()),n.s=c.status,""==c.responseType||"text"==c.responseType)n.res=C(c.responseText);else if(c.response)n.res=C(c.response);else try{n.res=C(c.responseText)}catch(i){n.res=0}if(n.readyState=c.readyState,n.cb_time=l,e=[n.method+" "+n.url,n.s>0?n.end-n.start:0,l,n.s,n.s>0?0:t,n.res,n.req],n.r&&(r=a(c),r&&(r=r.xData)&&(e.push(r.id),e.push(r.action),e.push(r.time&&r.time.duration),e.push(r.time&&r.time.qu))),G.aa.push(e),G.server.custom_urls&&G.server.custom_urls.length&&!lt.ct){if(!G.pattern){G.pattern=[];for(var o=0;o<G.server.custom_urls.length;o++)G.pattern.push(new RegExp(G.server.custom_urls[o]))}for(var o=0;o<G.pattern.length;o++)if(n.url.match(G.pattern[o])){lt.ct=n.end+l;break}}lt.sa(),c._ty_rum=null}}function n(){4==c.readyState&&r(0)}function a(e){var r;if(e.getResponseHeader){var n=X.parseJSON(e.getResponseHeader("X-Tingyun-Tx-Data"));n&&n.r&&e._ty_rum&&n.r+""==e._ty_rum.r+""&&(r={name:e._ty_rum.url,xData:n},ct&&t._ty_rum.c_ra.push(r))}return r}function i(t){return function(){var e,r;4==c.readyState&&c._ty_rum&&(c._ty_rum.end=e=u(),c._ty_rum.readyState=4);try{q&&d(q),r=t.apply(this,arguments),q&&p()}catch(a){throw a=f(a,q),q&&p(),q=null,a}return 4==c.readyState&&(l=u()-e),n(),r}}function o(t){return function(){var e=c._ty_rum;return!e||("progress"==t||("abort"==t?r(905):"loadstart"==t?e.start=u():"error"==t?r(990):"timeout"==t&&r(903),!0))}}function s(t,e){e instanceof Array||(e=[e]);for(var r=0;r<e.length;r++){var n=e[r];X.sh(t,n,o(n),!1)}}if(!this._ty_wrap){this._ty_rum.start=u(),this._ty_rum.req=arguments[0]?C(arguments[0]):0;var c=this,l=0,h=X.wrap(!1,this,"onreadystatechange",i);h||X.sh(this,"readystatechange",n,!1),s(this,["error","progress","abort","load","loadstart","loadend","timeout"]),h||setTimeout(function(){X.wrap(!1,c,"onreadystatechange",i)},0)}var v=function(){function t(t){var e={},r=/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?/.exec(t);return r&&(e.protocol=r[1]?r[1]+":":"http:",e.hostname=r[3],e.port=r[4]||""),e}return function(e){var r=location;if(e=X.trim(e)){if(e=e.toLowerCase(),e.startsWith("//")&&(e=r.protocol+e),!e.startsWith("http"))return!0;var n=t(e),a=n.protocol===r.protocol&&n.hostname===r.hostname;return a&&(a=n.port===r.port||!r.port&&("http:"===r.protocol&&"80"===n.port||"https:"===r.protocol&&"443"===n.port)),a}return!1}}(),y=arguments;try{var m=G.server;m&&m.id&&this._ty_rum&&v(this._ty_rum.url)&&(this._ty_rum.r=(new Date).getTime()%1e8,this.setRequestHeader&&this.setRequestHeader("X-Tingyun-Id",m.id+";r="+this._ty_rum.r))}catch(g){}try{return e.apply(this,y)}catch(_){return Function.prototype.apply.call(e,this,y)}}}function O(){var e="TINGYUN_DATA";if(G.agent)return G.agent;var r=a(e);if(r){try{r=r.replace(/^"/,"").replace(/"$/,""),r=G.agent=X.parseJSON(decodeURIComponent(r))}catch(n){}i(e,"",-1e3)}else r=t._ty_rum&&t._ty_rum.agent;return r}var q,D=t.XMLHttpRequest,B=document,M=Object.defineProperty,A=t.define,H=t.EventTarget,U=0,$=new RegExp("([a-z]+:/{2,3}.*):(\\d+):(\\d+)"),z=t.encodeURIComponent,F=null,X={wrap:function(t,e,r,n,a){try{var i=e[r]}catch(o){if(!t)return!1}if(!i&&!t)return!1;if(i&&i._ty_wrap)return!1;try{e[r]=n(i,a)}catch(o){return!1}return e[r]._ty_wrap=[i],!0},unwrap:function(t,e){try{var r=t[e]._ty_wrap;r&&(t[e]=r[0])}catch(n){}},each:function(t,e){if(t){var r;for(r=0;r<t.length&&(!t[r]||!e(t[r],r,t));r+=1);}},mkurl:function(t,e){var a=arguments,i=/^https/i.test(B.URL)?"https":"http";if(i=i+"://"+t+"/"+e+"?av=1.6.2&v=1.6.0&key="+s(G.server.key)+"&ref="+s(B.URL)+"&rand="+u()+"&pvid="+at+"&did="+s(r())+"&sid="+s(n()),"pf"!==e&&G&&(G.agent=O(),G.agent&&(G.agent.n&&(i+="&n="+s(G.agent.n)),G.agent.user_label&&(i+="&user_label="+s(G.agent.user_label)))),a.length>2){var o=a[2];for(var c in o)i+="&"+c+"="+o[c]}return j.host&&(i+="&cshst="+s(j.host)),j.url&&(i+="&csurl="+s(j.url)),i},GET:function(t,e){function r(){e&&e.apply(this,arguments),n.parentNode&&n.parentNode.removeChild(n)}if(navigator&&navigator.sendBeacon&&rt.test(t))return navigator.sendBeacon(t,null);var n=B.createElement("img");return n.setAttribute("src",t),n.setAttribute("style","display:none"),this.sh(n,"readystatechange",function(){"loaded"!=n.readyState&&4!=n.readyState||r("loaded")},!1),this.sh(n,"load",function(){return r("load"),!0},!1),this.sh(n,"error",function(){return r("error"),!0},!1),B.body.appendChild(n)},fpt:function(t,e,r){function n(t,e,r){var n=B.createElement(t);try{for(var a in e)n[a]=e[a]}catch(i){var o="<"+t;for(var a in e)o+=" "+a+'="'+e[a]+'"';o+=">",r||(o+="</"+t+">"),n=B.createElement(o)}return n}var a=n("div",{style:"display:none"},!1),i=n("iframe",{name:"_ty_rum_frm",width:0,height:0,style:"display:none"},!1),o=n("form",{style:"display:none",action:t,enctype:"application/x-www-form-urlencoded",method:"post",target:"_ty_rum_frm"},!1),s=n("input",{name:"data",type:"hidden"},!0);return s.value=e,o.appendChild(s),a.appendChild(i),a.appendChild(o),B.body.appendChild(a),o.submit(),i.onreadystatechange=function(){"complete"!==i.readyState&&4!==i.readyState||(r(null,i.innerHTML),B.body.removeChild(a))},!0},POST:function(e,r,n,a){if(this.ie)return this.fpt(e,r,a);if(navigator&&navigator.sendBeacon&&rt.test(e)){var i=navigator.sendBeacon(e,r);return a(!i),i}var o;if(t.XDomainRequest)return o=new XDomainRequest,o.open("POST",e),o.onload=function(){a(null,o.responseText)},this.sh(o,"load",function(){a(null,o.responseText)},!1),this.sh(o,"error",function(){a("POST("+e+")error")},!1),this.wrap(!0,o,"onerror",function(t){return function(){return a&&a("post error",o.responseText),!0}}),o.send(r),!0;if(!D)return!1;o=new D,o.overrideMimeType&&o.overrideMimeType("text/html");try{o._ty_wrap=1}catch(s){}var u=0;o.onreadystatechange=function(){4==o.readyState&&200==o.status&&(0==u&&a(null,o.responseText),u++)},o.onerror&&this.wrap(!0,o,"onerror",function(t){return function(){return a("post error",o.responseText),"function"!=typeof t||t.apply(this,arguments)}});try{o.open("POST",e,!0)}catch(s){return this.fpt(e,r,a)}for(var c in n)o.setRequestHeader(c,n[c]);return o.send(r),!0},sh:function(t,e,r,n){return t.addEventListener?t.addEventListener(e,r,n):!!t.attachEvent&&t.attachEvent("on"+e,r)},args:function(){for(var t=[],e=0;e<arguments.length;e++)t.push(arguments[e]);return t},stringify:o,parseJSON:function(e){if(e&&"string"==typeof e){var r=t.JSON?t.JSON.parse:function(t){return new Function("return "+t)()};return r(e)}return null},trim:V?function(t){return null==t?"":V.call(t)}:function(t){return null==t?"":t.toString().replace(/^\s+/,"").replace(/\s+$/,"")},extend:function(t,e){if(t&&e)for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);return t},bind:function(t,e){return function(){return t.apply(e,arguments)}}},j={},G=t._ty_rum=t.TINGYUN=X.extend({st:u(),ra:[],c_ra:[],aa:[],snd_du:function(){return this.server.adu?1e3*this.server.adu:1e4},cc:function(){return this.server.ac?this.server.ac:10},config:function(t,e){var r;if("object"==typeof t)r=t;else{if("string"!=typeof t||void 0===e)throw new Error("illegal arguments");r={},r[t]=e}for(var n in r)j[n]=r[n];return this},setUserLabel:function(t){t&&((this.agent||(this.agent={})).user_label="string"==typeof t?t:X.stringify(t))}},t._ty_rum||{});var ty_rum=G;ty_rum.server = {beacon:"beacon.tingyun.com",beacon_err:"beacon-err.tingyun.com",key:"heTre0seWW0",trace_threshold:7000,ignore_err:false,fp_threshold:2000,fs_threshold:4000,dr_threshold:4000,id:"wl4EtIR_7Is"};if(G.server&&!(G.server.sr&&Math.random()>=G.server.sr)){var J=!("debug"in G.server)||G.server.debug,W={start:G.st,e:{},an:{count:0},visible:[]};!function(){if(J){var t,e;"undefined"!=typeof B.hidden?(t="hidden",e="visibilitychange"):"undefined"!=typeof B.msHidden?(t="msHidden",e="msvisibilitychange"):"undefined"!=typeof B.webkitHidden&&(t="webkitHidden",e="webkitvisibilitychange"),"undefined"==typeof B.addEventListener||"undefined"==typeof B[t]||X.sh(B,e,function(){J&&W.visible.push([B[t],u()])})}}();var Y={fp_threshold:2e3,fs_threshold:4e3,dr_threshold:4e3},Z=X.extend(Y,G.server),K="ignore_err",Q=!(K in G.server)||G.server[K],V=String.prototype.trim;String.prototype.startsWith||(String.prototype.startsWith=function(t,e){return e=e||0,this.indexOf(t,e)===e});var tt,et,rt=/^http/i,nt=function(){function t(t){return t<0?NaN:t<=30?0|Math.random()*(1<<t):t<=53?(0|Math.random()*(1<<30))+(0|Math.random()*(1<<t-30))*(1<<30):NaN}function e(t,e){for(var r=t.toString(16),n=e-r.length,a="0";n>0;n>>>=1,a+=a)1&n&&(r=a+r);return r}return function(){return e(t(32),8)+"-"+e(t(16),4)+"-"+e(16384|t(12),4)+"-"+e(32768|t(14),4)+"-"+e(t(48),12)}}(),at=nt(),it="TY_DISTINCT_ID",ot="TY_SESSION_ID",st=function(){try{return localStorage.setItem(at,at),localStorage.removeItem(at),!0}catch(t){return!1}}();st?(tt=X.bind(localStorage.getItem,localStorage),et=X.bind(localStorage.setItem,localStorage)):(tt=a,et=i);try{M&&M(t,"define",{get:function(){return A},set:function(t){"function"==typeof t&&(t.amd||t.cmd)?(A=function(){var e=X.args.apply(this,arguments);if(3!==e.length)return t.apply(this,e);var r="string"==typeof e[0]?e[0]:"anonymous";return t.apply(this,c(e,function(t,e,r){var n;try{q=r,h(r),n=t.apply(this,e),v()}catch(a){throw v(),f(a,r)}return n},r))},X.extend(A,t)):A=t},configurable:!0})}catch(ut){}var ct=t.performance?t.performance:t.Performance;ct&&(X.sh(ct,"resourcetimingbufferfull",function(){var t=ct.getEntriesByType("resource");t&&(G.ra=G.ra.concat(t),ct.clearResourceTimings())},!1),X.sh(ct,"webkitresourcetimingbufferfull",function(){var t=ct.getEntriesByType("resource");t&&(G.ra=G.ra.concat(t),ct.webkitClearResourceTimings())},!1));for(var ft="",lt=G.metric={ready:function(){return G.load_time},initend:function(){function t(){lt.sa()}G.end_time||(G.end_time=u(),J&&(W.end=G.end_time),this._h=setInterval(t,2e3))},send:function(){function e(){function e(t){return n[t]>0?n[t]-a:0}var r={};if(ct&&ct.timing){var n=ct.timing;if(J){var i=W.t={};for(var o in n){var u=n[o];"function"!=typeof u&&(i[o]=u)}}a=n.navigationStart;var c=e("domainLookupStart"),f=e("domainLookupEnd"),l=e("redirectStart"),d=e("redirectEnd"),p=e("connectStart"),h=e("connectEnd");r={f:e("fetchStart"),qs:e("requestStart"),rs:e("responseStart"),re:e("responseEnd"),os:e("domContentLoadedEventStart"),oe:e("domContentLoadedEventEnd"),oi:e("domInteractive"),oc:e("domComplete"),ls:e("loadEventStart"),le:e("loadEventEnd"),tus:e("unloadEventStart"),tue:e("unloadEventEnd"),ressize:!0},h-p>0&&(r.cs=p,r.ce=h),f-c>0&&(r.ds=c,r.de=f),(d-l>0||d>0)&&(r.es=l,r.ee=d),0==r.le&&(r.ue=G.load_time-a);var v;if(n.msFirstPaint)v=n.msFirstPaint,J&&(W.fp="m_"+v);else if(t.chrome&&chrome.loadTimes){var y=chrome.loadTimes();y&&(y.firstPaintTime&&(v=1e3*y.firstPaintTime),J&&(W.fp="c_"+y.firstPaintTime))}else G.firstPaint&&(v=G.firstPaint,J&&(W.fp=G.firstPaint));v&&(r.fp=Math.round(v-a),G.firstPaint=r.fp),n.secureConnectionStart&&(r.sl=e("secureConnectionStart"))}else r={t:a,os:G.end_time-a,ls:G.load_time-a,ressize:!1};r.je=lt.errors.length,lt.ct&&(r.ct=lt.ct-a),lt.touch&&(r.fi=lt.touch-a);var m=O();return m&&(r.id=s(m.id),r.a=m.a,r.q=m.q,r.tid=s(m.tid),r.n=s(m.n)),r.sh=t.screen&&t.screen.height,r.sw=t.screen&&t.screen.width,r}function r(e){var r=t._ty_rum.c_ra;if(e)for(var n=r.length-1;n>=0;n--)if(e.indexOf(r[n].name)>-1)return r[n].xData;return null}function n(t){function e(t){return d[t]>0?d[t]:0}var n="1",i="0";if(ft+=g()>=Z.fp_threshold?n:i,ft+=_()>=Z.fs_threshold?n:i,ft+=S()>=Z.dr_threshold?n:i,ft+=t>=G.server.trace_threshold?n:i,!m())return null;var o=ct;if(o&&o.getEntriesByType){var u={tr:!0,tt:s(B.title),charset:B.characterSet},c=G.ra,f=o.getEntriesByType("resource");f&&(c=c.concat(f),o.clearResourceTimings?o.clearResourceTimings():o.webkitClearResourceTimings&&o.webkitClearResourceTimings()),u.res=[];for(var l=0;l<c.length;l++){var d=c[l],p={o:e("startTime"),rt:d.initiatorType,n:d.name,f:e("fetchStart"),ds:e("domainLookupStart"),de:e("domainLookupEnd"),cs:e("connectStart"),ce:e("connectEnd"),sl:e("secureConnectionStart"),qs:e("requestStart"),rs:e("responseStart"),re:e("responseEnd"),ts:d.transferSize||0,es:d.encodedBodySize||0},h=r(d.name);h&&(p.aid=h.id,p.atd=h.trId,p.an=h.action,p.aq=h.time&&h.time.qu,p.as=h.time&&h.time.duration),u.res.push(p)}if(lt.errors.length){u.err=[];for(var l=0,v=lt.errors,y=v.length;l<y;l++)u.err.push({o:Math.round(v[l][0]-a),e:v[l][1]&&v[l][1].replace(/([\"\\])/g,"\\$1").replace(/\n/g,"\\n"),l:v[l][2],c:v[l][3],r:v[l][4],ec:y,s:v[l][5],m:v[l][6],ep:v[l][7]})}return u}return null}if(this.sended)return!1;if(!this.ready())return!1;var a=G.st,i={};try{var o=e();i=n(o.ls>0?o.ls:G.load_time-a);var c={trflag:ft||"0000",fp:G.firstPaint,fs:G.fs,dr:G.dr};X.extend(o,c)}catch(f){}i?(J&&(i.debug=W),i=X.stringify(i)):i="",J=!1;var l=X.mkurl(G.server.beacon,"pf",o);F=u(),0!=i.length&&X.POST(l,i,{},y("POST"))||X.GET(l);var d=X.bind(w,this);return d(),setInterval(d,1e4),this.sended=!0,this.sa(1),!0},sa:function(t){(this.ready()||t)&&(t||(t=!this._last_send||u()-this._last_send>G.snd_du()||G.aa.length>=G.cc()),G.aa.length>0&&t&&(this._last_send=u(),X.POST(X.mkurl(G.server.beacon,"xhr"),X.stringify({xhr:G.aa}),{},y("POST")),G.aa=[]))},errors:[]},dt=null,pt={},ht=[["load",E],["beforeunload",k],["pagehide",k],["unload",k],["pageshow",function(){}]],vt=0;vt<ht.length;vt++){var yt=null;J&&(yt=function(t,r){return function(n){return e(t),r.apply(this,arguments)}}(ht[vt][0],ht[vt][1])),X.sh(t,ht[vt][0],yt||ht[vt][1],!1)}t.addEventListener?X.sh(t,"error",L,!1):t.onerror=function(t,e,r,n,a){if(e||!Q){var i=[u(),t,r,n,e==B.URL?"#":e],o=N(t,r,n,a&&a.moduleName);i=i.concat([a&&a.stack,a&&a.moduleName,pt[o]?0:1]),pt[o]=!0,P(i),lt.errors.push(i)}};for(var mt=[["scroll",x],["keypress",x],["click",x],["DOMContentLoaded",T],["readystatechange",b]],vt=0;vt<mt.length;vt++)X.sh(B,mt[vt][0],mt[vt][1],!1);if(X.wrap(!1,t,"requestAnimationFrame",function(e){return function(){var r=u();return J&&(W.an.count++,W.an.t=r),G.firstPaint=r,t.requestAnimationFrame=e,e.apply(this,arguments)}}),D)if(D.prototype)X.wrap(!1,D.prototype,"open",R),X.wrap(!1,D.prototype,"send",I);else{X.ie=7;var gt=D;t.XMLHttpRequest=function(){var t=new gt;return X.wrap(!1,t,"open",R),X.wrap(!1,t,"send",I),t}}else t.ActiveXObject&&(X.ie=6)}ty_rum.agent={id:'boy5mtpvRsQ#zb0nORwISlk',n:'WebAction/MVC/Article%2Fdetails',tid:'1f543d3fa5770b3490f3',q:0,a:78};}(window);</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Convolutional Clustering for Unsupervised Learning 论文翻译" />
+
+    <meta name="keywords" content="深度学习,图像识别,图片聚类" />
+
+   
+    <script src="http://static.blog.csdn.net/scripts/blog_static_head.min.js" type="text/javascript"></script>
+
+    
+        <!--new top-->
+       
+       
+        <!--new top-->
+    
+      <!-- ad begin -->
+         
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/dark1/css/style.css?v=1.1" />
+
+    
+
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/roguesir/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+
+    <link href="http://c.csdnimg.cn/blog/csdn_public_blog_detail.min.css" type="text/css" rel="stylesheet" />
+     
+         <link rel="stylesheet" href="http://static.blog.csdn.net/css/csdn_blog_detail.min.css" />
+
+  
+
+
+    <!-- 请置于所有广告位代码之前 --> 
+            <script src="http://dup.baidustatic.com/js/ds.js"></script>
+
+</head>
+
+
+<body>
+     
+        <div class="tracking-ad" data-view="true" data-mod="ad_popu_72"  data-mtp="62" data-order="40" data-con="ad_content_2072" >
+                     <script id="popuLayer_js_q" src="http://ads.csdn.net/js/popuLayer.js" defer="defer"  type="text/javascript"></script>
+                <div id="layerd" style="position: fixed;bottom:0px;right:0px;line-height:0px;z-index:1000">
+    	                <div class="J_close layer_close" style="display:;background-color:#efefef;padding:0px;color:#333;font:12px/24px Helvetica,Tahoma,Arial,sans-serif;text-align:right;">关闭</div><!-- 广告占位容器 --><div id="cpro_u2895327"></div></div>
+                <script>  document.getElementById("popuLayer_js_q").onload = function () { var styObjd = styObj = { width: "300px", "height": parseInt(250) + 28 }; window.CSDN.Layer.PopuLayer("#layerd", { storageName: "layerd", styleObj: styObjd, total: 50, expoire: 1000 * 60 }); }</script><!-- 投放代码 --><script type="text/javascript">                    /*服务器频道首页置顶Banner960*90，创建于2014-7-3*/    (window.cproArray = window.cproArray || []).push({ id: "u2895327" });  </script>  <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+     
+        </div>
+
+    <!-- 广告位开始 -->
+        
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/roguesir">roguesir的博客</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        
+     
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>           
+                <li id="btnContents"><a href="http://blog.csdn.net/roguesir?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/roguesir?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/roguesir/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "roguesir";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/roguesir";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+
+<a href="http://blog.csdn.net/turingbooks/article/details/76034232">
+<font color=red><strong>评论送书 | 7月书讯：众多畅销书升级！ </strong></font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp
+
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/76215994">
+<font color=blue><strong>CSDN日报20170727——《想提高团队技术，来试试这个套路！》 </strong></font></a>
+&nbsp;&nbsp;&nbsp;&nbsp
+
+
+<a href="http://blog.csdn.net/broadview2006/article/details/76145481">
+<font color=red><strong>评论送书 | 机器学习、Java虚拟机、微信开发</strong></font></a>
+
+</div>                        </div>
+
+                        
+
+
+
+  
+
+
+
+
+
+
+<script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+      var isBole = false; 
+      var fasrc="http://my.csdn.net/my/favorite/miniadd?t=%e3%80%90Paper+Note%e3%80%91Convolutional+Clustering+for+Unsupervised+Learning+%e8%ae%ba%e6%96%87%e7%bf%bb%e8%af%91%ef%bc%88%e6%9c%aa%e5%ae%8c%e5%be%85%e7%bb%ad%ef%bc%89&u=http://blog.csdn.net/roguesir/article/details/72842958"
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Translated"></span>
+
+    <h1>
+        <span class="link_title"><a href="/roguesir/article/details/72842958">
+        <font color="red">[置顶]</font>
+        【Paper Note】Convolutional Clustering for Unsupervised Learning 论文翻译（未完待续）        
+           
+        </a>
+        </span>
+
+         
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">深度学习</a><a href='http://www.csdn.net/tag/%e5%9b%be%e5%83%8f%e8%af%86%e5%88%ab' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">图像识别</a><a href='http://www.csdn.net/tag/%e5%9b%be%e7%89%87%e8%81%9a%e7%b1%bb' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">图片聚类</a><a href='http://www.csdn.net/tag/%e5%8d%b7%e7%a7%af%e8%81%9a%e7%b1%bb' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">卷积聚类</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2017-06-02 11:44</span>
+            <span class="link_view" title="阅读次数">6820人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('%e3%80%90Paper+Note%e3%80%91Convolutional+Clustering+for+Unsupervised+Learning+%e8%ae%ba%e6%96%87%e7%bf%bb%e8%af%91%ef%bc%88%e6%9c%aa%e5%ae%8c%e5%be%85%e7%bb%ad%ef%bc%89','72842958');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(72842958,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            try
+            {
+                var lib = eval("("+$("#lib").attr("value")+")");
+                var html = "";
+                if (lib.err == 0) {
+                    $.each(lib.data, function (i) {
+                        var obj = lib.data[i];
+                        //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                        html += ' <a href="' + obj.url + '" target="_blank">';
+                        html += ' <img src="' + obj.logo + '">';
+                        html += ' <em><b>' + obj.name + '</b></em>';
+                        html += ' </a>';
+                    });
+                    if (html != "") {
+                        setTimeout(function () {
+                            $("#lib").html(html);                      
+                            $("#embody").show();
+                        }, 100);
+                    }
+                }      
+            } catch (err)
+            { }
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('6950886','roguesir','top','72842958');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Paper Note<em>（3）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/roguesir/article/category/6950886"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_6950886">                            
+                            </ul>
+                        </div>
+                    </label>                    
+                    <label  onclick="GetCategoryArticles('6938036','roguesir','top','72842958');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Deep Learning<em>（13）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/roguesir/article/category/6938036"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_6938036">                            
+                            </ul>
+                        </div>
+                    </label>                    
+                    <label  onclick="GetCategoryArticles('6938037','roguesir','top','72842958');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Machine Learning<em>（7）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/roguesir/article/category/6938037"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_6938037">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+
+  
+
+  
+  
+     
+
+
+<div id="article_content" class="article_content tracking-ad" data-mod=popu_307  data-dsm = "post" >
+
+<h2>Title</h2>
+<h2><img src="http://img.blog.csdn.net/20170712164138301?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</h2>
+<h2>Address</h2>
+<div><a target="_blank" target="_blank" href="https://arxiv.org/abs/1511.06241">https://arxiv.org/abs/1511.06241</a><br>
+</div>
+<h2>Abstract</h2>
+<div>标注数据以训练深度神经网络的任务可怕又无聊，需要数以百万计的标签来达到最先进的结果。通过应用无监督学习算法，可以减少深度神经网络模型对于标签数据的依赖。这篇论文提出了k-means算法的增强版本来达到训练一个深度神经网络的目的。算法通过使用相&#20284;的filter来减少参数量，我们称之为卷积k-means聚类。实验表明，这个算法的准确性要优于其他无监督学习算法，尤其是在STL-10上获得了74.1%的准确率，在MNIST数据集上的测试误差仅为0.5%。</div>
+<h2>Introduction</h2>
+<div>深度神经网络需要以大量数据作为输入来训练，在大规模数据集中，监督学习方法在近些年已经成功地被训练，一些受欢迎的数据集像ImageNet包含了一百万的标签样本，甚至更大的数据集已经被该领域的研究人员追捧，进一步说，视频数据集在深度神经网络训练事件识别任务中越来越重要。以上这些情况下，含有标签的数据在监督学习算法的训练中都是必要的，然而，标注大量的数据的费用昂贵，浪费时间，还很无聊，举个例子，标注ImageNet数据集就用了几百个小时，标注一个极其简单的视频数据集甚至需要几千个小数才能完成。为了规避这个问题，我们要充分利用那些无标签的数据。</div>
+<div>在过去的几十年中，广泛的研究一直致力于在图像理解的背景下学习深层学习的特征层次。示例包括无监督、监督和半监督学习。这样的深度学习技术使用层次结构，其使用“filter”来提取多个输入特征并且“connection”将提取的特征组合在一起成为下一层的输入。在早期的实地研究中，无监督的预训练是通过监督学习方法训练深层网络所必需的。卷积神经网络（ConvNets）的结合大量标签数据的最新进展已经在对象识别任务中表现出很大的希望来弥补这个问题（Krizhevsky等，2012）。<br>
+</div>
+<div>另一方面，无人&#20540;守学习算法（如k均&#20540;聚类）也增加了网络中的参数数量，并且在标记数据有限时获得了最先进的结果。虽然使用k-means算法的无监督学习技术通常用于在几项研究中训练滤波器（Coates＆Ng，2011b; Bo等，2013），网络编码结构与ConvNets呈现许多相&#20284;之处，例如使用卷积和汇集在每一层。</div>
+<div>基于应用于图像识别的k-means的ConvNets和无监督学习技术之间的主要区别是每层的层数（深度）和过滤器数量（宽度）以及层之间的连接。 ConvNets通过增加网络深度和宽度来提高准确性。最近的研究表明，ConvNets的显着表现是深度增加的结果（Zeiler＆Fergus，2014）。相比之下，深度网络的无监督学习算法无法与常规ConvNets相比，扩展到相同的深度。因此，最近的无监督研究使用较大的网络宽度和两到三层的收益递减（Coates＆Ng，2011b）。在这项工作中，我们证明，学习深层神经网络层之间的联系在提高无监督技术的表现方面起着至关重要的作用。<br>
+</div>
+<div>虽然ConvNets的早期工作曾经依赖于“非完全”连接方案（LeCun等人，1998）将连接数保持在合理范围内，但是趋势已经转变为完全连接的层，以利用这些优点的并行计算（Krizhevsky et al。，2012; Simonyan＆Zisserman，2014）。完全连接的层执行大量潜在的不必要的操作，因为它们将上一层的每个特征连接到下一个的每个特征。<br>
+</div>
+<div>在本研究中，已经提出了允许滤波器学习不同特征的无监督聚类算法的精简版本。这是通过防止算法学习基本上相互转换版本的冗余filter来实现的，如第3节所详述的。这项工作的另一个主要贡献是我们通过强制稀疏集合的特征来映射层之间的稀疏连接矩阵进入下一层的特征，这已经在第4节中进行了说明。我们表明，卷积k均&#20540;聚类算法可以通过改进的连接学习为受监督的网络提供可比较的中级特征层次。<br>
+</div>
+<h2>Related Work</h2>
+<div>近年来，人们将卷积网络的filter应用在无监督学习算法中用以预训练或者明确filter&#20540;的兴趣越来越大，早期的工作建议将在patch级别进行稀疏编码和稀疏建模，忽略了filter以卷积的方式为人所用的事实，这种方法导致了重复的filter，这些filter彼此间都是相互转换的版本，为了解决这个问题，使用对比差异训练的convolutional Restricted Boltzmann Machine和convolutional sparse coding methods被提出。</div>
+<div>使用k-means算法的filter在最近的研究中得到了极大的关注，因为它与简单性和竞争结果相结合，正确的预处理和编码方案（Coates＆Ng，2011a; Lin＆Kung，2014）。在这些研究中，用k-means算法训练的filter以卷积方式应用于输入图，以提取有用的特征。然而，还没有尝试减少使用该算法学习的filter之间的冗余，这是妨碍效率和精度的问题。<br>
+</div>
+<div>在几乎所有的统计学习问题中，维度的诅咒是深层神经网络中的已知问题。特别是研究表明，k-means在第一层之后表现不佳（Coates＆Ng，2011b）。第一层的filter的数量具有较小的尺寸，另一方面，随后的层以指数方式增加网络参数的数量。作为维度问题的诅咒的一个例子，如果我们有32×32 RGB图像，并且在第一层中训练96个3×5×5像素的filter，并将它们与输入图像进行卷积，我们将得到96×28×28的特征映射为输出。如果要在第二层培训完全连接的filter（如第一层filter），则需要对96×5×5的filter进行训练。
+ k-means算法无法提取特征，并且在如此高的维度上效果不佳。因此，对于中等特征，应该优选比完全连接层更小的接收场（Coates＆Ng，2011b）。在ConvNets的早期工作中，LeCun等人（1998）使用简约（不完全连接）的连接方案将连接数保持在合理范围内，并强制网络中的对称性突破。由于不同的特征图馈入不同的输入集合，系统被迫提取不同的特征。在使用无监督算法的技术中，随机连接（Culurciello et al，2013）和分类相&#20284;特征（Coates＆Ng，2011b）已被提出;这些结果增加了额外的层次，并提供了一些改进，但不如通过监督深度网络获得的那些重要。<br>
+</div>
+<div>在这项工作中，我们通过设计避免复制类&#20284;filter的优化学习算法来解决上述问题。由于滤波器将用于卷积运算，所以转换的filter版本不会向特征层次结构提供附加信息，因此应该避免。我们进一步提出通过ConvNets的上下文中的监督学习来了解层之间的联系。连接设置在通道之间使用1D卷积，这相当于林等人的表示为mlpconv层的操作。 （2013年）。这一层已经被用来提高Lin等人的局部模型的抽象能力。 （2013），并减少模块的维度以及消除Szegedy等人的计算瓶颈（2014）。</div>
+<div>
+<div class="page" title="Page 2">
+<div class="layoutArea">
+<div class="column">
+<h2>Learning Flters</h2>
+<h3>Learning Filters with K-means</h3>
+<div>我们的学习filter的方法是基于k-means算法。经典的k-means算法找到了使欧几里德空间中的点之间的距离最小化的聚类质心。在这种情况下，点是随机提取的图像斑块，质心是将用于编码图像的filter。<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712161838969?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div>描述的学习方案在补丁级别上训练每个簇的质心，然而，在ConvNets中，filter以卷积方式应用于图像。如图1a所示，来自k均&#20540;训练的许多质心具有几乎相同的方向，并且它们在空间中彼此相互偏移。因此，在卷积运算之后，它们将在相邻位置产生冗余的特征图。在下一节中，我们将解释k-means算法（卷积k均&#20540;）的改进，以减轻这个问题。<br>
+</div>
+<div><br>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712161749205?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<h3>Learning Convolutional Filters with K-means</h3>
+<div>为了减少相邻位置的filter之间的冗余，我们提出了一种新的输入patch提取方法。这种方法大大减少了k-means算法产生的质心的冗余度，并且只保留了它们的基本依据。标准k-means算法从匹配质心的输入图像中提取随机斑块。相比之下，所提出的方法使用较大的窗口作为输入来决定哪个patch提取用于聚类。<br>
+窗口被选择为filter尺寸的两倍，并从输入图像中随机选择。 k-means算法的质心将整个窗口卷积在计算提取区域的每个位置处的相&#20284;性度量。对应于窗口最大激活的patch意图是与质心最相&#20284;的特征（给定ConvNets具有平移不变性）。最后，从窗口中提取该特定位置的patch（最大活动），并将其分配给相应的质心。修改后的字典学习可以写成如下：<br>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712161913732?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div>当这些相关的filter被删除时，新的filter有更多的空间来学习其他功能。使用k均&#20540;和卷积k均&#20540;算法进行训练的filter如图1所示。从图1a可以看出，使用k均&#20540;算法在patch级别训练的filter具有相&#20284;的特征，但在不同的位置在patch内。作为示例并以红色突出显示，有许多水平filter是不同高度的互相复制的。相比之下，用卷积k均&#20540;算法训练的filter显着更多样化，如图1b所示。<br>
+</div>
+<h3>Experimental Results of Single Layer Network</h3>
+<div>我们运行单层网络的实验来分析卷积k均&#20540;的影响。在我们的实验中，我们使用10种类型的包含96×96 RGB图像的STL-10数据集（Coates et al。，2011）。该数据集每班有500幅图像，训练800张，用于测试。此外，它包括从图像相&#20284;但更广泛分布中提取的无监督学习算法的100 000个未标记图像。为了使用k-means聚类学习filter，仅使用未标记的数据。对于使用k均&#20540;和卷积k均&#20540;的filter的训练，从原始图像中随机提取patch。然后，对提取的patch应用标准预处理，如全局对比度归一化和ZCA-增白。</div>
+<div>对于编码方案，我们只对输入图像应用全局对比度归一化。我们用训练有素的字典通过k-means和卷积k-手段来修复ConvNet的第一层filter。我们通过将filter&#20540;除以由交叉验证确定的常数来减小训练filter的动态范围。在我们的实验中，我们使用STL-10数据集，没有任何下采样。然而，卷积层施加了4的步幅，这有效地减小了第一层中的尺寸。该层之后是最大池操作，其将维度减小到K×2×2，其中K是在卷积层中使用的filter的数量。汇集后，采用整流线性单元（ReLU）激活功能;类&#20284;于ConvNets近期的作品（Krizhevsky等，2012）。注意，为了比较用这两种算法训练的filter的有效性，我们设置了一个较大的汇总大小，将尺寸减小到K×2×2，并训练单层分类器。在实验中，我们的学习率为0.1，动量率为0.9。<br>
+</div>
+<div>在图2中，我们将k-means算法与卷积k均&#20540;法进行比较。在图2a中，我们将filter尺寸固定为3×11×11，并改变filter的数量。我们观察到，filter数量的增加为我们提供了两种算法的更高性能，然而，使用卷积k均&#20540;学习的filter总是优于具有k-means算法的filter。请注意，为达到类&#20284;的准确度水平，如54％，我们的方法所需的filter数量小于k-means的一半。在图2b中，我们将filter数量固定为96，并改变filter的大小。我们的方法胜过所有filter尺寸的k-means。<br>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712161931249?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div><br>
+</div>
+<h2>Learning Connection</h2>
+<div>我们也研究了从一个网络层到另一个网络层学会连接的方式，这种方式尤其重要，就像是从下层学会新的特征从而创建新的特征图，然而全连接层将之前网络层中的所有特征都用到了下一层中，我们采用非全连接(LeCun et al.1998)的方式，这种方式在计算中更加有效。这种非全连接用到了多个分组，每个分组包括一个对前面网络层一部分特征的限制。我们使用一个稀疏连接矩阵来限制局部感受野。因此，当输入数据为高维时，我们可以避免k-means算法的较差性能(Coates &amp; Ng,2011b)。</div>
+<div>我们的方法利用有限数据的监督，同时学习层之间的连接权重。连接由完全连接的权重矩阵描述，该矩阵在特征图上进行了池化。因此，权重矩阵中的单个&#20540;反映了该特征对于相应组的重要性。为了学习映射和分组两者之间的关系（即定义它们的权重），我们增加了一个预定义的非全连接的卷积层，如图3所示。在卷积层之后附加线性分类器并使用反向传播算法训练系统。这种设置的直觉是，由于从特征组中学习新的过滤器，并且每个权重矩阵池在输出处于预定组中的特征上，因此权重矩阵实际上被迫学习训练输入特征图和预先确定的组。因此，即使我们预先定义了卷积层的连接，权重矩阵为网络提供了在实践中定义连接的灵活性。<br>
+</div>
+<div><br>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712162027132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<p>注意，池化特征图的权重矩阵可以被认为是具有可用偏置的1D全连接的卷积层。这种新方法允许我们限制k-means算法的局部感受区域。它进一步允许我们通过训练的权重创建跨通道信息的新的复杂和可学习的交互。在通过监督学习学习连接后，我们从网络中删除学习的过滤器，只保留连接矩阵。这是因为我们的目标是使用无监督技术来学习滤波器，使用最小的标签数据，并避免过拟合。在这些步骤之后，我们的卷积k-means算法再次应用于预训练的连接矩阵以学习下一层的滤波器，并且算法不再受到维度的诅咒。细节和实验结果将在下一节中介绍。<br>
+</p>
+<h3>Experimental Results of Multi-Layer Networks</h3>
+<div>我们结合（a）监督和无监督的学习过滤器和（b）层之间的监督学习和随机连接进行实验，。这些实验旨在分析学习连接的重要性。我们建立了一个2层网络。第一层有96个尺寸为13×13的filter。卷积层采用strides=4，之后跟着ReLU激励函数。在第一层和第二层feature map之间，我们预定义4个连续的特征图为一组，结果分成96/4 = 24组。从每个组，我们学习64个过滤器。第二层滤波器的尺寸选择为4×5×5，4来自预定义的非完全连接方案的选择。在filter的卷积后，我们应用大小为6×6的池化操作来降低维度。
+ ReLU激活功能遵循最大池化操作。我们使用具有2层512个隐藏神经元的线性分类器，并交错设置dropout(Hinton et al. 2012)。<br>
+</div>
+<div>对于无监督学习的filter，我们对未标注数据应用卷积k-means算法，随机连接指的是第一层filter以预定义的连接方案连接到第二层。监督连接是指在预定义连接方案之前，我们训练一个96×96的监督连接矩阵的情况。第二层filter和连接矩阵被一起训练，这迫使连接矩阵组织特征图，使得每个组包含应该组合在一起的特征。要以无监督的方式用监督连接学习第二层过滤器，我们固定了监督训练连接矩阵，并用卷积k-means训练每组的局部filter。</div>
+<div><img src="http://img.blog.csdn.net/20170712162043033?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div>表1显示了这些实验的结果。首先，由于过度适应有限数量的标签数据，所以用超级学习来训练整个网络的准确性将会降低。第一层的无监督学习提供了比完全监督的网络更大的性能提升。在我们的实验中，以监督的方式学习连接提高了每个案例的性能，尽管无人监督的学习仍然产生更好的性能。此外，在图4a中，我们分析了第二层中filter的监督和无监督学习的效果。无人监控（k-means算法）和监督（反向传播算法）学习算法显示不同的特征，因为我们增加第二层中的filter数量。 K-means学习算法需要包含增加的filter数量以产生与监督的反向推算算法相当的结果。尽管监督算法可以更有效地代表具有较少filter的数据，但是当filter数量增加时，它会损失训练集的精度和过载。相比之下，无监督的算法（卷积k均&#20540;）在少数量的filter下表现不佳。这种差异可能是因为监督的算法正在学习鉴别特征，而k-means学习算法学习了各种常见的特征。</div>
+<div>最后，我们将网络的深度扩展到三个，以分析观察到的行为是否持续更大的网络。使用类&#20284;于第二层的配置，我们添加第三层，其包括表示连接的连接矩阵和具有非完全连接的另一卷积层。在这种情况下，连接矩阵以与Szegedy等人相&#20284;的方式减小尺寸（尺寸1536×678）（2014）;这减轻了计算瓶颈。其他级联卷积层组合每四个特征图，并学习尺寸为4×3×3的filter。其后是ReLU激活功能，最大池化4×4以减小尺寸。<br>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712162106777?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div><br>
+在图4b中，我们分析了第三层过滤器的监督和无监督学习的效果。结果表现出与第二层对应物类&#20284;的行为。 k均&#20540;算法需要增加filter的数量以产生与监督反向传播算法相当的结果。相比之下，无监督方法的性能可以通过连接在不同层计算的表示作为用于分类的图像特征向量来进一步提高。代替使用最后一层输出来提供分类器，我们连接中间层输出以在最终结果中提供分类器。改进是可能的，因为我们的模型没有超额，如其他作品所示。<br>
+</div>
+<h2>Final Classification Results</h2>
+<div>最后，我们比较我们的方法与STL-10和MNIST数据集上发布的最先进的竞争方法。为了进行比较，我们主要关注以无监督的方式学习过滤器的算法。多字典方法（Coates＆Ng，2011b; Lin＆Kung，2014）是将不同层（即输出&#20540;）计算的表示作为图像特征向量的级联。我们使用与我们其他实验中使用的相同的学习参数，预处理和编码方案（第3.3节）。<br>
+</div>
+<h3>STL-10</h3>
+<div>对于最终的分类结果，我们使用基于我们的两层和三层网络实验的网络。然而，我们通过用最大二乘法的2×2替换第一层的步幅来增加网络大小，从而提高了网络的准确性。我们通过多字典方法进一步提高准确性。详细地说，对于具有多字典网络的两层，我们使用来自两层实验的类&#20284;网络，其中我们从第一层输出中的每个24组中学习了64个滤波器。我们将这个网络与一个具有512个过滤器的单层网络连接起来。单层网络还包括ReLU激活和最大容量，以将输出的尺寸减小到512×4×4。对于具有多字典网络的三层，我们使用三层网络实验中的网络，我们创建了32个过滤器来自192组。我们还将这个网络与一个具有512个过滤器的单层网络连接起来。如在之前的比较中，线性分类器使用具有512层隐藏层的2层，并且以0.5的速率交错（Hinton等人，2012）。如表2所示，具有多字典的双层网络具有71.4％的精度。注意，这个&#20540;远远高于以前所有的无监督学习算法的工作，而网络比（Coates＆Ng，2011b;
+ Lin＆Kung，2014）中使用的网络要小一个数量级（参数数量）。使用附加层，我们的算法实现了74.1％的精度。<br>
+</div>
+<h3><br>
+</h3>
+<div><img src="http://img.blog.csdn.net/20170712162125682?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div><br>
+</div>
+<div>
+<h3>MNIST</h3>
+<div>我们对MNIST数据集进行了一系列实验。对于测试，我们使用标准的10 000个测试样本，并使用不同大小的标签数据进行监督培训，如表3所示。通过确保每个标签均匀分布，从整个数据集中随机抽取训练数据。对于无监督的过滤学习算法，我们使用整个数据集，而对于训练连接和分类器，我们只使用随机提取的样本。我们使用与STL-10数据集上使用的相同的双层网络，除了我们将线性分类器中的隐藏层的大小减小到256，并且级联的一层网络具有96个过滤器。该数据集的实验结果见表3</div>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div><img src="http://img.blog.csdn.net/20170712162214083?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcm9ndWVzaXI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</div>
+<div><br>
+</div>
+<h2>Conclusions</h2>
+<div>我们提出了一个新颖的框架，结合了无监督聚类算法，k-means和卷积神经网络的优势，当很少的标签数据可用时。我们的框架修改k均&#20540;聚类算法，以便在与卷积网络一起使用时会学习相邻位置的冗余过滤器。此外，我们提出了一个监督学习设置，以了解层之间的正确连接。应用于卷积网络的本地连接的想法减轻了过滤器学习中的维度诅咒，并使算法具有可扩展性。此外，所提出的框架消除了在编码阶段期间包括输入的任何层上的数据白化的必要性（在学习字典时应用美白）;这使得编码阶段比其他编码阶段非常简单（Coates＆Ng，2011b;
+ Hui，2013）。我们的实验表明，所提出的算法在无人监控的学习深层神经网络滤波器的技术中表现优于最先进的算法。<br>
+</div>
+<div><br>
+</div>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   
+
+<!--172.16.140.12-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+
+ 
+
+
+        <div id="digg" ArticleId="72842958" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>1</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+        function btndigga() {
+            $(".tracking-ad[data-mod='popu_222'] a").click();
+        }
+        function btnburya() {
+            $(".tracking-ad[data-mod='popu_223'] a").click();
+        }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='http://blog.csdn.net/roguesir/article/details/73647695';">下一篇</span><a href="http://blog.csdn.net/roguesir/article/details/73647695" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Mac安装图像标注工具labelImg</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+            <div class="similar_article"   >
+                    <h4></h4>
+                    <div class="similar_c"style="margin:20px 0px 0px 0px">
+                        <div class="similar_c_t">
+                          &nbsp;&nbsp;相关文章推荐
+                        </div>
+                   
+                        <div class="similar_wrap tracking-ad" data-mod="popu_36" >                       
+                            <ul class="similar_list fl">    
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://503382003.iteye.com/blog/1852623" title="赵雅智_java类和对象（未完待续）" strategy="BlogCommendFromCsdn" target="_blank">赵雅智_java类和对象（未完待续）</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://blog.csdn.net/usingnamespace_std/article/details/9304507" title="Standford机器学习 聚类算法（clustering）和非监督学习（unsupervised Learning）" strategy="BlogCommendFromCsdn" target="_blank">Standford机器学习 聚类算法（clustering）和非监督学习（unsupervised Learning）</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://4ljy.iteye.com/blog/2238029" title="如何区分监督学习(supervised learning)和非监督学习(unsupervised learning)" strategy="BlogCommendFromCsdn" target="_blank">如何区分监督学习(supervised learning)和非监督学习(unsupervised learning)</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://blog.csdn.net/roguesir/article/details/73681885" title="【Paper Note】Convolutional Clustering for Unsupervised Learning 论文理解（未完待续）" strategy="BlogCommendFromCsdn" target="_blank">【Paper Note】Convolutional Clustering for Unsupervised Learning 论文理解（未完待续）</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://blog.csdn.net/xiyi5609/article/details/73088064" title="谷歌论文阅读：Building High-level Features Using Large Scale Unsupervised Learning" strategy="BlogCommendFromCsdn" target="_blank">谷歌论文阅读：Building High-level Features Using Large Scale Unsupervised Learning</a>
+                                   </li>
+                            </ul>
+                              <ul class="similar_list fr">      
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://xiongjiajia.iteye.com/blog/1546415" title="C语言例题 [未完待续...]" strategy="BlogCommendFromCsdn" target="_blank">C语言例题 [未完待续...]</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://blog.csdn.net/roguesir/article/details/75007749" title="【Paper Note】Support Vector Clustering 论文翻译（未完待续）" strategy="BlogCommendFromCsdn" target="_blank">【Paper Note】Support Vector Clustering 论文翻译（未完待续）</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://gaofen100.iteye.com/blog/1269275" title="机器学习 6 unsupervised learning" strategy="BlogCommendFromCsdn" target="_blank">机器学习 6 unsupervised learning</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://blog.csdn.net/liuxiao214/article/details/73500737" title="生成对抗网络学习笔记3----论文unsupervised representation learning with deep convolutional generative adversarial" strategy="BlogCommendFromCsdn" target="_blank">生成对抗网络学习笔记3----论文unsupervised representation learning with deep convolutional generative adversarial</a>
+                                   </li>
+                                   <li>
+                                       <em>•</em>
+                                       <a href="http://xiaoruanjian.iteye.com/blog/1549920" title="[转] 疯狂代码：大型网站架构系列（未完待续）" strategy="BlogCommendFromCsdn" target="_blank">[转] 疯狂代码：大型网站架构系列（未完待续）</a>
+                                   </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>   
+      
+</div>
+
+     <div>
+           
+
+       
+                           
+            <!-- 广告位：PC端-博客内容页-banner1-960*90 --> 
+            <script> 
+                (function() { 
+                    var s = "_" + Math.random().toString(36).slice(2); 
+                    document.write('<div id="' + s + '"></div>'); 
+                    (window.slotbydup=window.slotbydup || []).push({ 
+                        id: '4228013', 
+                        container: s, 
+                        size: '0,0', 
+                        display: 'inlay-fix' 
+                    }); 
+                })(); 
+            </script>
+    </div>
+
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/roguesir/svc/GetSuggestContent/72842958",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+        <dl class="blog-ass-articl tracking-ad" id="res-relatived" data-mod="popu_84"  > 
+             <dt><span>猜你在找</span></dt>    
+           
+    
+           
+
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/course/detail/5084" title="【直播】机器学习&amp;深度学习系统实战（唐宇迪）" strategy="undefined" target="_blank">【直播】机器学习&amp;深度学习系统实战（唐宇迪）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/course/detail/5219" title="【直播】Kaggle 神器：XGBoost 从基础到实战（冒教授）" strategy="undefined" target="_blank">【直播】Kaggle 神器：XGBoost 从基础到实战（冒教授）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/course/detail/5222" title="【直播回放】深度学习基础与TensorFlow实践（王琛）" strategy="undefined" target="_blank">【直播回放】深度学习基础与TensorFlow实践（王琛）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/52" title="【直播】计算机视觉原理及实战（屈教授）" strategy="undefined" target="_blank">【直播】计算机视觉原理及实战（屈教授）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/48" title="【直播】机器学习之凸优化（马博士）" strategy="undefined" target="_blank">【直播】机器学习之凸优化（马博士）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/47" title="【直播】机器学习之矩阵（黄博士）" strategy="undefined" target="_blank">【直播】机器学习之矩阵（黄博士）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/46" title="【直播】机器学习之概率与统计推断（冒教授）" strategy="undefined" target="_blank">【直播】机器学习之概率与统计推断（冒教授）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/49" title="【直播】机器学习之数学基础" strategy="undefined" target="_blank">【直播】机器学习之数学基础</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/44" title="【直播】TensorFlow实战进阶（智亮）" strategy="undefined" target="_blank">【直播】TensorFlow实战进阶（智亮）</a>
+                        </dd>
+                        <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;">
+                             <a href="http://edu.csdn.net/huiyiCourse/series_detail/45" title="【直播】深度学习30天系统实训（唐宇迪）" strategy="undefined" target="_blank">【直播】深度学习30天系统实训（唐宇迪）</a>
+                        </dd>
+
+                  
+              
+                 
+        </dl>
+
+
+
+
+            
+                                    
+            
+                                    
+
+        <!-- 广告位开始 -->
+        <!-- 广告位结束 -->
+
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '72842958';
+    var commentscount = 0;
+    var islock = false
+</script>
+
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){        
+        
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+    var articletitle='【Paper Note】Convolutional Clustering for Unsupervised Learning 论文翻译（未完待续）';
+
+</script>
+
+
+
+
+
+
+
+
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+               
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/roguesir" target="_blank">
+    <img src="http://avatar.csdn.net/4/5/B/1_roguesir.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/roguesir" class="user_name" target="_blank">roguesir</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=roguesir','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="1" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>21041次</span></li>
+    <li>积分：<span>443</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog2.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：443 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>20篇</span></li>
+    <li>转载：<span>0篇</span></li>
+    <li>译文：<span>2篇</span></li>
+    <li>评论：<span>0条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body" class="form_search">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search csdn-tracking-statistics" target="_blank"  data-mod="popu_306">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+   
+    $(function () {
+        $("#btnSubmit").unbind("click");
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {           
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            if ($("#inputSearch").val() == "") {               
+                alert("请录入搜索关键词！");                         
+                return false;
+            }
+            //var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";           
+            var url = "https://www.baidu.com/s?wd=" + encodeURIComponent($("#inputSearch").val()) + "%20site%3Ablog.csdn.net"
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/roguesir/article/category/6938036" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Deep Learning</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6938037" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Machine Learning</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6988889" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Meeting Note</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6991959" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Book Note</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6950886" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Paper Note</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6992135" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">TensorFlow/Theano/Keras</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6992140" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Caffe</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/7023197" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">python</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/7046953" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">R</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/roguesir/article/category/6988440" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">应用工具</a><span>(10)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/roguesir/article/month/2017/07">2017年07月</a><span>(16)</span></li><li><a href="/roguesir/article/month/2017/06">2017年06月</a><span>(6)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel tracking-ad" data-mod="popu_340">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/roguesir/article/details/72842958" title="【Paper Note】Convolutional Clustering for Unsupervised Learning 论文翻译（未完待续）">【Paper Note】Convolutional Clustering for Unsupervised Learning 论文翻译（未完待续）</a><span>(6819)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73658419" title="基于决策树算法的电信运营商客户流失预测">基于决策树算法的电信运营商客户流失预测</a><span>(6014)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74283268" title="图片聚类——k-means算法的python实现">图片聚类——k-means算法的python实现</a><span>(3706)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74536423" title="用RNN做MNIST分类">用RNN做MNIST分类</a><span>(918)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74940113" title="python正则表达式">python正则表达式</a><span>(520)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73770448" title="【Book Note】TensorFlow实战——LeNet5神经网络简介及TensorFlow实现">【Book Note】TensorFlow实战——LeNet5神经网络简介及TensorFlow实现</a><span>(478)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74940390" title="python机器学习算法">python机器学习算法</a><span>(463)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/75029011" title="Mac 安装caffe时候出现的各种错误">Mac 安装caffe时候出现的各种错误</a><span>(410)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73647695" title="Mac安装图像标注工具labelImg">Mac安装图像标注工具labelImg</a><span>(396)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74923232" title="基于python的urllib库编写网络爬虫">基于python的urllib库编写网络爬虫</a><span>(321)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel tracking-ad" data-mod="popu_341">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/roguesir/article/details/76174879" title="LR和SVM的异同">LR和SVM的异同</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74547787" title="基于Keras实现CNN">基于Keras实现CNN</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74536423" title="用RNN做MNIST分类">用RNN做MNIST分类</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/74283268" title="图片聚类——k-means算法的python实现">图片聚类——k-means算法的python实现</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73790619" title="Deep Learning常用的一些数据集简介">Deep Learning常用的一些数据集简介</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73770448" title="【Book Note】TensorFlow实战——LeNet5神经网络简介及TensorFlow实现">【Book Note】TensorFlow实战——LeNet5神经网络简介及TensorFlow实现</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73741216" title="【Book Note】TensorFlow实战——卷积神经网络简介">【Book Note】TensorFlow实战——卷积神经网络简介</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73681885" title="【Paper Note】Convolutional Clustering for Unsupervised Learning 论文理解（未完待续）">【Paper Note】Convolutional Clustering for Unsupervised Learning 论文理解（未完待续）</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73658419" title="基于决策树算法的电信运营商客户流失预测">基于决策树算法的电信运营商客户流失预测</a><span>(0)</span>
+</li>
+<li>
+<a href="/roguesir/article/details/73647695" title="Mac安装图像标注工具labelImg">Mac安装图像标注工具labelImg</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/blogdevteam/article/details/76092129" target="_blank">* CSDN日报20170725——《新的开始，从研究生到入职亚马逊》</a></li>
+<li><a href="http://blog.csdn.net/javazejian/article/details/75043422" 
+target="_blank">* 深入剖析基于并发AQS的重入锁(ReetrantLock)及其Condition实现原理</a></li>
+<li><a href="http://blog.csdn.net/jiangwei0910410003/article/details/75512732"target="_blank">* Android版本的"Wannacry"文件加密病毒样本分析(附带锁机)</a></li>
+<li><a href="http://blog.csdn.net/mindfloating/article/details/75948781" 
+target="_blank">* 工作与生活真的可以平衡吗？</a></li>
+<li><a href="http://blog.csdn.net/poem_qianmo/article/details/75943714" 
+target="_blank">* 《Real-Time Rendering 3rd》 提炼总结——高级着色：BRDF及相关技术</a></li>
+<li><a href="http://blog.csdn.net/dog250/article/details/75735806" 
+target="_blank">* 《三体》读后思考-泰勒展开/维度打击/黑暗森林</a></li>
+
+</ul></ul>
+</div>
+
+
+    </div>
+    <div class="clear">
+    </div>
+
+                   <!-- 广告位开始 -->                    <!-- 广告位结束 -->
+                   <div class="tracking-ad" data-view="true"  data-mtp="63" data-order="40" data-con="ad_content_1260" style="width: 200px; height: 500px;">
+                         <div id="nav_show_top_stop" style="width: 200px;height: 500px;z-index:1000"><div id="cpro_u2734128"></div>
+                             <div id="cpro_u3031287"></div></div>
+                   </div>
+    <script type="text/javascript">
+        setTimeout(function () {
+            var naviga_offsetTop = 0;
+            function naviga_stay_top() { var scrollTop = jQuery(document).scrollTop(); if (scrollTop > naviga_offsetTop) { jQuery("#nav_show_top_stop").css({ "position": "fixed" }); jQuery("#nav_show_top_stop").css({ "top": "0px" }); } else { jQuery("#nav_show_top_stop").css({ "position": "fixed" }); jQuery("#nav_show_top_stop").css({ "top": naviga_offsetTop - scrollTop + "px" }); } }
+            function onload_function() { naviga_offsetTop = jQuery("#nav_show_top_stop").position().top; jQuery(window).bind("scroll", naviga_stay_top); jQuery(window).bind("mousewheel", naviga_stay_top); jQuery(document).bind("scroll", naviga_stay_top); jQuery(document).bind("mousewheel", naviga_stay_top); } jQuery(document).ready(onload_function);
+
+        }, 200);
+    </script>
+<script type="text/javascript">(window.cproArray = window.cproArray || []).push({ id: "u2734128" });  </script> 
+                    <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script> 
+                   <script type="text/javascript">
+                       /*PC端-博客内容页左侧Button2-200*200-2017/7/10*/
+                       (window.cproArray = window.cproArray || []).push({ id: "u3031287" });
+</script>
+<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+
+           </div>   
+
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+
+    </div>
+      <!--new top-->
+    
+
+     
+
+   
+   
+     <!--new top-->
+   
+   
+
+    
+    
+    
+   
+
+   
+
+
+       <script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+          <script type="text/javascript">
+              //$(function () {
+              //    setTimeout(function () {
+              //        var searchtitletags = articletitle + ',' + $("#tags").html();
+              //        searchService({
+              //            index: 'blog',
+              //            query: searchtitletags,
+              //            from: 5,
+              //            size: 5,
+              //            appendTo: '#res',
+              //            url: 'recommend',
+              //            his: 2,
+              //            client: "blog_cf_enhance",
+              //            tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+              //        });
+              //    }, 1000);
+              //});
+
+         </script>
+    
+    <script src="http://static.blog.csdn.net/scripts/csdn_blog_detail.min.js" type="text/javascript"></script>
+        
+    <script type="text/javascript" src="http://c.csdnimg.cn/blog/csdn_public_blog_detail.min.js?20170719001"></script>
+
+    <script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=6680877"></script>
+
+     
+    
+
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+    
+    
+        
+     
+
+    
+          
+    <div class="pop_CA_cover"  style="display:none"></div>
+    <div class="pop pop_CA"  style="display:none">
+          <div class="CA_header">
+            收藏助手
+            <span class="cancel_icon"  id="fapancle"  onclick="$('.pop_CA').hide();$('.pop_CA_cover').hide();"></span>
+          </div>
+          <iframe src="" id="fa" frameborder="0" width="100%" height="360"  scrolling="no" ></iframe>
+    </div>
+
+
+        <script type="text/javascript">
+
+            $(function () {
+                var fromjs = $("#fromjs");
+                if (fromjs.length > 0) {
+                    $("#fromjs .markdown_views pre").addClass("prettyprint");
+                    prettyPrint();
+
+                    $('pre.prettyprint code').each(function () {
+                        var lines = $(this).text().split('\n').length;
+                        var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                        $(this).addClass('has-numbering').parent().append($numbering);
+                        for (i = 1; i <= lines; i++) {
+                            $numbering.append($('<li/>').text(i));
+                        };
+                        $numbering.fadeIn(1700);
+                    });
+
+                    $('.pre-numbering li').css("color", "#999");
+                }
+            });
+
+            $(".markdown_views a[target!='_blank']").attr("target", "_blank");
+
+            //$(".toc a[target='_blank']").attr("target", "");
+
+            setTimeout(function () {
+                $(".toc a[target='_blank']").attr("target", "");
+            }, 500);
+
+        </script>
+    
+</body>
+</html>   
