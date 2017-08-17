@@ -1,37 +1,165 @@
-## Welcome to GitHub Pages
+# feature-blog-jekyll [![Code Climate](https://codeclimate.com/github/lavkumarv/feature-blog-jekyll/badges/gpa.svg)](https://codeclimate.com/github/lavkumarv/feature-blog-jekyll) <a href="https://codeclimate.com/github/lavkumarv/feature-blog-jekyll"><img src="https://codeclimate.com/github/lavkumarv/feature-blog-jekyll/badges/issue_count.svg" /></a>
 
-You can use the [editor on GitHub](https://github.com/ambition-xu/ambition-xu.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Feature Blog is a minimalist, beautiful, responsive theme for Jekyll. It is built using the Bootstrap 3.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Home Page:
 
-### Markdown
+![home](home.jpg "home")
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Features
 
-```markdown
-Syntax highlighted code block
+* Twitter Bootstrap 3
+* Option to set featured image & video in post
+* Pagination support
+* Disqus comments if you choose to enable
+* MailChip Integration for subscription
+* Tags for [Open Graph](https://developers.facebook.com/docs/opengraph/), [Twitter Cards](https://dev.twitter.com/docs/cards) and Schema.org for a better social sharing experience
+* Support for recent post
+* SEO Enabled theme
+* Beautifully crafted 404 page
+* Custom categories and tags pages
+* Ajax based search
+* Sitemap for search engines
+* Google Fonts
+* Font awesome icons
+* Easy to configure and customize
 
-# Header 1
-## Header 2
-### Header 3
+## Basic Setup for a new Jekyll site
 
-- Bulleted
-- List
+1. [Install Jekyll](http://jekyllrb.com) if you haven't already.
+2. Fork the [Feature Blog Theme](https://github.com/lavkumarv/feature-blog-jekyll/fork)
+3. Clone the repo you just forked.
+4. Edit `_config.yml` to personalize your site.
+5. Check out the sample posts in `_posts` to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.
+6. Read the documentation below for further customization pointers and documentation.
 
-1. Numbered
-2. List
+---
 
-**Bold** and _Italic_ and `Code` text
+## Setup for an Existing Jekyll site
 
-[Link](url) and ![Image](src)
+`_config.yml` file:
+
+``` yaml
+# Basic settings
+description:  This is personal blog.
+baseurl: "/"
+url: "https://roguesir.github.io"
+github_username:  roguesir
+include: ['_pages']
+
+# Build settings
+markdown:    kramdown
+highlighter: pygments
+lsi:         false
+excerpt_separator: "\n\n"
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+# pagination
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "/page:num/"
+
+# Enable comments
+comments: true
+
+# Markdown settings
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+  coderay:
+    coderay_wrap:              div
+    coderay_line_numbers:      inline
+    coderay_line_number_start: 1
+    coderay_tab_width:         4
+    coderay_bold_every:        10
+    coderay_css:               style
+---
+```
+---
+Global Configuration( global.yml):
+``` yaml
+# Site Settings
+title: 'Lav Vishwakarma'
+description: 'My personal Blog'
+url: 'https://roguesir.github.io'
+
+# Admin Settings
+admin_name: 'roguesir'
+admin_email: 'lixu0214@163.com'
+
+#####################################################################
+#About Page
+author_name: 'Lav Kumar Vishwakarma'
+author_profession: 'Full Stack Developer'
+author_description: 'A computer science graduate student at University Institute of Technology,
+RGPV with great interest in Software development and coding efficient software.</br></br>
+My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL,
+Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining
+ large scalable applications.</br></br>
+Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS
+application which is used by 65,000+ business worldwide. '
+author_image: '/images/author.jpg'
+
+# social proiles
+linkedin: 'https://www.linkedin.com/in/lav-vishwakarma/'
+instagram: 'https://www.instagram.com/vishwakarmalav/'
+github: 'https://github.com/roguesir'
+google-plus: 'https://plus.google.com/+LAVKUMARVISHWAKARMAdev'
+stackoverflow: 'http://stackoverflow.com/users/4703818/lav-kumar-vishwakarma'
+#####################################################################
+---
+```
+Navigation Bar(nav.yml):
+``` yaml
+main:
+    - { url: '/about', text: 'About' }
+---
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Post Formate:
 
-### Jekyll Themes
+Image Post:
+``` json
+layout: blog
+title: 'Sample post to check the functionality'
+date: 2017-01-24 12:11:34
+categories: blog
+tags: code
+image: '/images/default.jpg'
+lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+```
+Video Post:
+``` json
+layout: blog
+title: 'Sample post to check the functionality'
+date: 2017-01-24 12:11:34
+categories: blog
+tags: code
+image: '/images/default.jpg'
+lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+```
+## Built With
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ambition-xu/ambition-xu.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* [Bootstrap](http://getbootstrap.com/) - The css framework used
 
-### Support or Contact
+## Contributing
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Contributions are welcome!. Feel free to add a new feature or fix a bug.
+
+## Authors
+
+* **Lav Kumar Vishwakarma** - *Initial work* - [lavkumarv](https://github.com/roguesir)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
