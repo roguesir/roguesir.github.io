@@ -1,4 +1,4 @@
-# feature-blog-jekyll [![Code Climate](https://codeclimate.com/github/lavkumarv/feature-blog-jekyll/badges/gpa.svg)](https://codeclimate.com/github/lavkumarv/feature-blog-jekyll) <a href="https://codeclimate.com/github/lavkumarv/feature-blog-jekyll"><img src="https://codeclimate.com/github/lavkumarv/feature-blog-jekyll/badges/issue_count.svg" /></a>
+# feature-blog-jekyll [![Code Climate](https://codeclimate.com/github/roguesir/feature-blog-jekyll/badges/gpa.svg)](https://codeclimate.com/github/roguesir/feature-blog-jekyll) <a href="https://codeclimate.com/github/roguesir/feature-blog-jekyll"><img src="https://codeclimate.com/github/roguesir/feature-blog-jekyll/badges/issue_count.svg" /></a>
 
 Feature Blog is a minimalist, beautiful, responsive theme for Jekyll. It is built using the Bootstrap 3.
 
@@ -27,7 +27,7 @@ Home Page:
 ## Basic Setup for a new Jekyll site
 
 1. [Install Jekyll](http://jekyllrb.com) if you haven't already.
-2. Fork the [Feature Blog Theme](https://github.com/lavkumarv/feature-blog-jekyll/fork)
+2. Fork the [Feature Blog Theme](https://github.com/roguesir/feature-blog-jekyll/fork)
 3. Clone the repo you just forked.
 4. Edit `_config.yml` to personalize your site.
 5. Check out the sample posts in `_posts` to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.
@@ -89,7 +89,7 @@ kramdown:
 Global Configuration( global.yml):
 ``` yaml
 # Site Settings
-title: 'Lav Vishwakarma'
+title: 'roguesir'
 description: 'My personal Blog'
 url: 'https://roguesir.github.io'
 
@@ -99,23 +99,23 @@ admin_email: 'lixu0214@163.com'
 
 #####################################################################
 #About Page
-author_name: 'Lav Kumar Vishwakarma'
+author_name: 'roguesir'
 author_profession: 'Full Stack Developer'
-author_description: 'A computer science graduate student at University Institute of Technology,
-RGPV with great interest in Software development and coding efficient software.</br></br>
-My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL,
+author_description: 'A computer science graduate student at Dalian Maritime University,
+good at and insterested in machine learning and deep learning.</br></br>
+My 2+ years of experience in machine learning algorithm, such as SVM, DT, RF and so on.
+
 Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining
  large scalable applications.</br></br>
-Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS
-application which is used by 65,000+ business worldwide. '
+
 author_image: '/images/author.jpg'
 
 # social proiles
-linkedin: 'https://www.linkedin.com/in/lav-vishwakarma/'
-instagram: 'https://www.instagram.com/vishwakarmalav/'
+facebook: 'https://www.facebook.com/roguesir'
+zhihu: 'http://www.zhihu.com/people/roguesir'
+linkedin: 'https://www.linkedin.com/in/roguesir/'
+twitter: 'https://www.twitter.com/roguesir0214/'
 github: 'https://github.com/roguesir'
-google-plus: 'https://plus.google.com/+LAVKUMARVISHWAKARMAdev'
-stackoverflow: 'http://stackoverflow.com/users/4703818/lav-kumar-vishwakarma'
 #####################################################################
 ---
 ```
@@ -132,7 +132,7 @@ Image Post:
 ``` json
 layout: blog
 title: 'Sample post to check the functionality'
-date: 2017-01-24 12:11:34
+date: 2017-04-19 12:11:34
 categories: blog
 tags: code
 image: '/images/default.jpg'
@@ -158,7 +158,7 @@ Contributions are welcome!. Feel free to add a new feature or fix a bug.
 
 ## Authors
 
-* **Lav Kumar Vishwakarma** - *Initial work* - [lavkumarv](https://github.com/roguesir)
+* **Lav Kumar Vishwakarma** - *Initial work* - [roguesir](https://github.com/roguesir)
 
 ## License
 
