@@ -5,15 +5,15 @@ url: 'https://roguesir.github.io'
 
 # Admin Settings
 admin_name: 'roguesir'
-admin_email: 'lixu0214@163.com'
+admin_email: 'li_xu0214@163.com'
 
 #####################################################################
 #About Page
 author_name: 'roguesir'
-author_profession: 'Full Stack Developer'
-author_description: 'A computer science graduate student at University Institute of Technology, RGPV with great interest in Software development and coding efficient software.</br></br>
-My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL, Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining large scalable applications.</br></br>
-Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS application which is used by 65,000+ business worldwide. '
+author_profession: 'Machine Learning Algrithm Developer'
+author_description: 'A computer science graduate student, just loving machime learning and artificial intelligence.</br></br>
+With 2 months web crawler engineer intern and one and a half years machine learning algrithm engineer intern. It's so lucky for me to study machine learning methods and deep learning methods when I was intern majoring in computer vision by using convolutional 
+neural networks, now major in recommendation system</br></br>'
 author_image: '/images/author.jpg'
 
 # social proiles
