@@ -8,4 +8,4 @@ image: '/images/default.jpg'
 lead_text: 'This is my first blog on GitHub.'
 ---
 
-GitHub的第一篇文章
+GitHub的第一篇文章^_^
