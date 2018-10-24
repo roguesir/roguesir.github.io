@@ -7,7 +7,7 @@ include: ['_pages']
 
 # Build settings
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 lsi:         false
 excerpt_separator: "\n\n"
 gems:
