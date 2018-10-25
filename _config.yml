@@ -20,7 +20,7 @@ exclude:
 
 # pagination
 gems: [jekyll-paginate]
-paginate: 5
+paginate: 10
 paginate_path: "/page:num/"
 
 # Enable comments
