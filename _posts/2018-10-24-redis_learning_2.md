@@ -14,13 +14,12 @@ lead_text: '介绍Jedis和redis-py'
 
 ##### string
 
->  
-jedis.set("hello", "world");
-//[Out]: OK
-jedis.get("hello");
-//[Out]: world
-jedis.incr("counter");
-//[Out]: 1
+>  jedis.set("hello", "world");
+>  //[Out]: OK
+>  jedis.get("hello");
+>  //[Out]: world
+>  jedis.incr("counter");
+>  //[Out]: 1
 
 
 ##### hash
