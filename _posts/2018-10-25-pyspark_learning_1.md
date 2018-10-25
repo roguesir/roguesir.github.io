@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: '【PySpark学习笔记一】弹性分布式数据集'
-date: 2018-10-24 12:11:34
+date: 2018-10-25 12:11:34
 categories: blog
 tags: code
 lead_text: '介绍弹性分布式数据集RDD'
