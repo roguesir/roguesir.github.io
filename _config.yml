@@ -6,7 +6,7 @@ github_username:  roguesir
 include: ['_pages']
 
 # Build settings
-markdown:    kramdown
+markdown:    redcarpet
 highlighter: rouge
 lsi:         false
 excerpt_separator: "\n\n"
