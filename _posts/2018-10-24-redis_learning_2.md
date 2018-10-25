@@ -8,29 +8,21 @@ lead_text: '介绍Jedis和redis-py'
 ---
 
 
-Java客户端：Jedis
-===
-
-### Jedis基本使用
+### Java客户端：Jedis
 
 #### string
 
->  jedis.set("hello", "world");
->
->  //[Out]: OK
->
->  jedis.get("hello");
->
->  //[Out]: world
->
->  jedis.incr("counter");
->
->  //[Out]: 1
-
+``` java
+jedis.set("hello", "world");
+//[Out]: OK
+jedis.get("hello");
+//[Out]: world
+jedis.incr("counter");
+//[Out]: 1
+```
 
 #### hash
-
-```java
+``` java
 jedis.hset("myhash", "f1", "v1");
 jedis.hset("myhash", "f2", "v2");
 jedis.hgetAll("myhash");
@@ -92,7 +84,7 @@ value = client.get(key)
 print "key: " + key + ", value: " + value
 ```
 
-##### string
+#### string
 
 ```python
 client.set("hello", "world")
@@ -103,7 +95,7 @@ client.incr("counter")
 # 1
 ```
 
-##### hash
+#### hash
 
 ```python
 client.hset("myhash", "f1", "v1")
@@ -112,7 +104,7 @@ client.hgetall("myhash")
 # {"f1":"v1", "f2":"v2"}
 ```
 
-##### list
+#### list
 
 ```python
 client.rpush("mylist", "1")
@@ -122,7 +114,7 @@ client.lrange("mylist", 0, -1)
 # ["1","2","3"]
 ```
 
-##### set
+#### set
 
 ```python
 client.sadd("myset", "a")
@@ -132,7 +124,7 @@ client.smenber("myset")
 # set(["a","b"])
 ```
 
-##### zset
+#### zset
 
 ```python
 client.zadd("myzset", "99", "tom")

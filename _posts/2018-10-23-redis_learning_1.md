@@ -23,10 +23,10 @@ lead_text: '介绍Redis特点、常用命令、数据结构'
 #### keys：计算键
 
 ``` shell
-key * 
-# 遍历所有key
+key *  # 遍历所有key
 ```
-keys命令支持正则匹配，如```keys h*```表示便利店以h开头的所有key。
+
+keys命令支持正则匹配，如`keys h*`表示便利店以h开头的所有key。
 因为redis是单线程，keys命令一般不在生产环境中使用。
 
 keys *怎么用？
@@ -81,11 +81,10 @@ keys *怎么用？
   | expire | O(1)       |
   | type   | O(1)       |
 
-### 数据结构和内部编码
 
-#### 数据结构
+### 数据结构
 
-##### string
+#### string
 **结构和命令**
 
   - 可以是“字符串”、“数字”、“二进制”
@@ -138,7 +137,7 @@ keys *怎么用？
   | `incr` or `decr`   | O(1)   |
   | `mget` or `mset`   | O(n)   |
 
-##### hash
+#### hash
 
   - 特点
     - 键值结构：key   field   value
@@ -155,7 +154,7 @@ keys *怎么用？
     - `hincrby key field intCounter`：hash key对应的field的value自增intCounter，O(1)
     - `hincrbyfloat key field floatCountry`：hincrby浮点数版，O(1)
 
-##### list
+#### list
 
   - 特点
 
@@ -205,7 +204,7 @@ keys *怎么用？
     - `LPUSH + LTRIM = Capped Collection`
     - `LPUSH + BRPOP = Message Queue`
 
-##### set
+#### set
 
   - 特点
     - 无序
@@ -223,7 +222,7 @@ keys *怎么用？
     - `sunion user:1:follow user:2:follow`：求两个集合的并集
     - `sdiff|sinter|sunion + store destkey...`：将差集、交集、并集的结果保存在destkey中
 
-##### zset
+#### zset
 
   - 特点
     - 无重复元素
