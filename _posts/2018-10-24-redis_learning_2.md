@@ -8,11 +8,12 @@ lead_text: '介绍Jedis和redis-py'
 ---
 
 
-### Java客户端：Jedis
+Java客户端：Jedis
+===
 
-#### Jedis基本使用
+### Jedis基本使用
 
-##### string
+#### string
 
 >  jedis.set("hello", "world");
 >
@@ -27,7 +28,7 @@ lead_text: '介绍Jedis和redis-py'
 >  //[Out]: 1
 
 
-##### hash
+#### hash
 
 ```java
 jedis.hset("myhash", "f1", "v1");
@@ -36,7 +37,7 @@ jedis.hgetAll("myhash");
 //[Out]: {f1=v1,f2=v2}
 ```
 
-##### list
+#### list
 
 ```java
 jedis.rpush("mylist", "1");
@@ -46,7 +47,7 @@ jedis.lrange("mylist", 0, -1);
 //[Out]: [1,2,3]
 ```
 
-##### set
+#### set
 
 ```java
 jedis.sadd("myset", "a");
