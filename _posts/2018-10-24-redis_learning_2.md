@@ -7,7 +7,6 @@ tags: code
 lead_text: '介绍Jedis和redis-py'
 ---
 
-## Redis客户端
 
 ### Java客户端：Jedis
 
@@ -15,14 +14,14 @@ lead_text: '介绍Jedis和redis-py'
 
 ##### string
 
-```java
+>  
 jedis.set("hello", "world");
 //[Out]: OK
 jedis.get("hello");
 //[Out]: world
 jedis.incr("counter");
 //[Out]: 1
-```
+
 
 ##### hash
 
