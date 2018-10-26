@@ -2,7 +2,7 @@
 layout: blog
 title: '【Redis学习笔记二】Redis客户端'
 date: 2018-10-24 12:11:34
-categories: blog
+categories: Redis-Learning
 tags: code
 lead_text: '介绍Jedis和redis-py'
 ---
@@ -65,7 +65,7 @@ jedis.zrangeWithScore("myzset", 0, -1);
 
 #### 安装redis-py
 
-```python
+``` python
 sudo pip install redis
 
 easy_install redis
@@ -73,7 +73,7 @@ easy_install redis
 
 #### 简单使用
 
-```python
+``` python
 import redis
 
 client = redis.StrictRedis(host = "127.0.0.1", port = 6379)
@@ -86,7 +86,7 @@ print "key: " + key + ", value: " + value
 
 #### string
 
-```python
+``` python
 client.set("hello", "world")
 # True
 client.get("hello")
@@ -97,7 +97,7 @@ client.incr("counter")
 
 #### hash
 
-```python
+``` python
 client.hset("myhash", "f1", "v1")
 client.hset("myhash", "f2", "v2")
 client.hgetall("myhash")
@@ -106,7 +106,7 @@ client.hgetall("myhash")
 
 #### list
 
-```python
+``` python
 client.rpush("mylist", "1")
 client.rpush("mylist", "2")
 client.rpush("mylist", "3")
@@ -116,7 +116,7 @@ client.lrange("mylist", 0, -1)
 
 #### set
 
-```python
+``` python
 client.sadd("myset", "a")
 client.sadd("myset", "b")
 client.sadd("myset", "a")
@@ -126,7 +126,7 @@ client.smenber("myset")
 
 #### zset
 
-```python
+``` python
 client.zadd("myzset", "99", "tom")
 client.zadd("myzset", "66", "pater")
 client.zadd("myzset", "33", "james")

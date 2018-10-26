@@ -2,7 +2,7 @@
 layout: blog
 title: '【PySpark学习笔记三】spark-submit'
 date: 2018-10-25 12:11:34
-categories: blog
+categories: PySpark-Learning
 tags: code
 lead_text: '介绍spark-submit'
 ---

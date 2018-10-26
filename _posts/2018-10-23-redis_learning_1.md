@@ -2,7 +2,7 @@
 layout: blog
 title: '【Redis学习笔记一】Redis特点、常用命令'
 date: 2018-10-24 12:11:34
-categories: blog
+categories: Redis-Learning
 tags: code
 lead_text: '介绍Redis特点、常用命令、数据结构'
 ---
