@@ -8,7 +8,7 @@ admin_name: 'roguesir'
 admin_email: 'li_xu0214@163.com'
 
 #####################################################################
-About Page
+#About Page
 author_name: 'roguesir'
 author_profession: 'Machine Learning Algorithm Developer'
 author_description: 'A computer science graduate student, just loving machine learning and artificial intelligence.</br></br>
@@ -16,7 +16,7 @@ With 2 months web crawler engineer intern and one and a half years machine learn
 neural networks, now major in recommendation system</br></br>'
 author_image: '/images/author.jpg'
 
- social proiles
+# social proiles
 facebook: 'https://www.facebook.com/roguesir'
 twitter: 'https://twitter.com/roguesir0214'
 linkedin: 'https://www.linkedin.com/in/lroguesir/'
