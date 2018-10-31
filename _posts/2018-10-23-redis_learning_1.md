@@ -168,7 +168,7 @@ keys *怎么用？
 
     - `lpush key value1 value2...`：从列表左边插入值
 
-    - `linsert key before|after value newValue`：在列表指定的值前|后插入值
+    - `linsert key before|after value newValue`：在列表指定的值前or后插入值
 
     - `lpop key`：从左边弹出元素
 
