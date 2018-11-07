@@ -2,7 +2,7 @@
 layout: blog
 title: 'Paper Reading'
 date: 2018-10-25 12:11:34
-categories: Paper Reading
+categories: Paper\ Reading
 tags: code
 lead_text: '论文翻译理解'
 ---
