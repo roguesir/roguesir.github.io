@@ -1,47 +1,24 @@
-# Basic settings
-description:  This is personal blog.
-baseurl: "/"
-url: "https://roguesir.github.io" 
-github_username:  roguesir
-include: ['_pages']
+markdown: kramdown
+permalink: /:title.html
+url: https://www.roguesir.top
+lsi: true
+rouge: true
+safe: true
 
-# Build settings
-#markdown:    kramdown
-markdown:    redcarpet
-highlighter: pygments
-lsi:         false
-excerpt_separator: "\n\n"
-gems:
-  - jekyll-feed
-  - jekyll-paginate
-exclude:
-  - Gemfile
-  - Gemfile.lock
+# presonal config
+title: roguesir's Blog
+feed: /atom.xml
+comments: disqus
 
-# pagination
-gems: [jekyll-paginate]
-paginate: 10
-paginate_path: "/page:num/"
+author:
+  name: roguesir
+  nickname: roguesir
+  email: li_xu0214@163.com
+  gmail: li_xu0214@163.com
+  qqmail: li_xu0214@163.com
+  qqlist: li_xu0214@163.com
+  site: https://www.roguesir.top
 
-# Enable comments
-comments: true
-
-# Markdown settings
-redcarpet:
-    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
-
-#kramdown:
-#  auto_ids:       true
-#  footnote_nr:    1
-#  entity_output:  as_char
-#  toc_levels:     1..6
-#  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-#  enable_coderay: false
-#
-#  coderay:
-#    coderay_wrap:              div
-#    coderay_line_numbers:      inline
-#    coderay_line_number_start: 1
-#    coderay_tab_width:         4
-#    coderay_bold_every:        10
-#    coderay_css:               style
+seo:
+  keyword:
+  description:
