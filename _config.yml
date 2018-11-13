@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: /:title.html
-url: https://www.roguesir.top
+url: http://www.roguesir.top
 lsi: true
 rouge: true
 safe: true
@@ -17,7 +17,7 @@ author:
   gmail: li_xu0214@163.com
   qqmail: li_xu0214@163.com
   qqlist: li_xu0214@163.com
-  site: https://www.roguesir.top
+  site: http://www.roguesir.top
 
 seo:
   keyword:
