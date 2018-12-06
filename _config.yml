@@ -1,5 +1,4 @@
-permalink: /:title.html
-description:  This is personal blog.
+
 baseurl: "/"
 url: "https://roguesir.github.io"
 lsi: true
