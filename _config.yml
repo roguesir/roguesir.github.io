@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: /:title.html
-url: https://roguesir.github.io
+url: "https://roguesir.github.io"
 lsi: true
 rouge: true
 safe: true
