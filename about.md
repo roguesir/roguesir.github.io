@@ -9,9 +9,9 @@ about: true
 
 #### 技术
 
-- Programming: Python，SQL，Scala，R，Julia
-- Big Data: Hadoop, Spark, Hive
-- ML&DL: TensorFlow, Theano, PyTorch
+- ***Programming***: Python，SQL，Scala，R，Julia
+- ***Big Data***: Hadoop, Spark, Hive
+- ***ML&DL***: TensorFlow, Theano, PyTorch
 
 #### 工作
 
